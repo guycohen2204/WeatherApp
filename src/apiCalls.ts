@@ -1,10 +1,9 @@
-const apiKey = 'fdf942f263cc4c66ae7120239241111';
 const endpoint = 'https://api.weatherapi.com/v1';
 
 const getCurrentWeatherByCity = async (cityName: string) => {
     try {
         const response = await fetch(
-            `${endpoint}/current.json?key=${apiKey}&q=${cityName}`
+            `${endpoint}/current.json?key=${process.env.API_KEY}&q=${cityName}`
         );
 
         if (!response.ok) {
@@ -21,7 +20,7 @@ const getCurrentWeatherByCity = async (cityName: string) => {
 const getForecastByCity = async (cityName: string, days: number) => {
     try {
         const response = await fetch(
-            `${endpoint}/forecast.json?key=${apiKey}&q=${cityName}&days=${days}`
+            `${endpoint}/forecast.json?key=${process.env.API_KEY}&q=${cityName}&days=${days}`
         );
 
         if (!response.ok) {
