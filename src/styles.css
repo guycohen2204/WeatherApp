@@ -43,6 +43,11 @@ input:focus {
     display: flex;
 }
 
+.target-button {
+    border-radius: 50%;
+    background-color: transparent;
+}
+
 #forecast-period-container {
     padding: 30px;
     display: flex;
@@ -52,12 +57,24 @@ input:focus {
 .period-title {
     background: none;
     border: none;
+    font-size: 1rem;
     border-bottom: 2px solid black;
+    transition: all 0.3s ease-in-out;
+}
+
+.period-title:hover {
+    transform: scale(1.1);
+    /* font-size: 1.1rem; */
+    border-bottom: 3px solid black;
 }
 
 .weather-type-button {
     background: #fff;
     border-radius: 100%;
+}
+
+.weather-type-button:hover {
+    background: rgba(161, 161, 170, 0.4);
 }
 
 #content {
